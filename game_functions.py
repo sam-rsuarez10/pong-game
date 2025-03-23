@@ -17,10 +17,11 @@ def check_events():
         elif event.type == pygame.KEYDOWN:
             check_keydown_events(event)
 
-def update_screen(settings, screen):
+def update_screen(settings, screen, user_bar):
     ''' Update images on the screen and flip to the new screen '''
     
     # redraw the screen through the loop
     screen.fill(settings.bg_color)
+    user_bar.draw()
 
     pygame.display.flip()
