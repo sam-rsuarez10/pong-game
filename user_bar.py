@@ -15,12 +15,27 @@ class UserBar():
         
         self.rect = pygame.Rect(0, 0, self.width, self.height)
         
-        # position bar
+        # position bar at the left side of the screen
         self.rect.left = 20
         self.rect.centery = self.settings.screen_dimensions[1] // 2
 
-        self.y = float(self.rect.y)
+        self.y = float(self.rect.centery)
+
+        self.moving_up = False
+        self.moving_down = False
+
+        self.screen_rect = screen.get_rect()
     
     def draw(self):
         ''' Draw the user bar '''
         pygame.draw.rect(self.screen, self.color, self.rect)
+    
+    def update(self):
+        ''' Update the user bar position based on the movement flag '''
+
+        if self.moving_up and self.rect.top >  0:
+            self.y -= self.settings.bar_speed_factor
+        elif self.moving_down and self.rect.bottom < self.screen_rect.bottom:
+            self.y += self.settings.bar_speed_factor
+        
+        self.rect.centery = self.y

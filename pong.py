@@ -12,10 +12,11 @@ def run_game():
     pygame.display.set_caption("Pong")
 
     user_bar = UserBar(pong_settings, screen)
-    
+
     # main loop
     while True:
-        gf.check_events()
+        user_bar.update()
+        gf.check_events(user_bar)
         gf.update_screen(pong_settings, screen, user_bar)
 
 run_game()

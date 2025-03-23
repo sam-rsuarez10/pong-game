@@ -6,7 +6,8 @@ class Settings():
         self.__screen_width = 1500
         self.__sceen_height = 750
         self.__bg_color = (0, 0, 0)
-
+        
+        self.bar_speed_factor = 1.5
     @property
     def bg_color(self):
         return self.__bg_color
