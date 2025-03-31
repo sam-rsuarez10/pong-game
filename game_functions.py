@@ -26,12 +26,13 @@ def check_events(user_bar):
         elif event.type == pygame.KEYUP:
             check_keyup_events(event, user_bar)
 
-def update_screen(settings, screen, user_bar, computer_bar):
+def update_screen(settings, screen, user_bar, computer_bar, ball):
     ''' Update images on the screen and flip to the new screen '''
     
     # redraw the screen through the loop
     screen.fill(settings.bg_color)
     user_bar.draw()
     computer_bar.draw()
+    ball.draw()
 
     pygame.display.flip()
