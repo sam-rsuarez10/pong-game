@@ -1,10 +1,10 @@
 import pygame
 
-class UserBar():
-    ''' Class that represents the user bar '''
+class ComputerBar():
+    ''' Class that represents the computer bar '''
 
     def __init__(self, settings, screen):
-        ''' Initialize the user bar ans starting position '''
+        ''' Initiliaze the computer bar and starting position '''
         self.screen = screen
         self.settings = settings
 
@@ -12,11 +12,11 @@ class UserBar():
         self.width = 15
         self.height = 90
         self.color = (255, 255, 255)
-        
+
         self.rect = pygame.Rect(0, 0, self.width, self.height)
-        
-        # position bar at the left side of the screen
-        self.rect.left = self.settings.bar_margin
+
+        # position bar at the right side of the screen
+        self.rect.right = self.screen.get_rect().right - self.settings.bar_margin
         self.rect.centery = self.settings.screen_dimensions[1] // 2
 
         self.y = float(self.rect.centery)
@@ -25,7 +25,7 @@ class UserBar():
         self.moving_down = False
 
         self.screen_rect = screen.get_rect()
-    
+
     def draw(self):
         ''' Draw the user bar '''
         pygame.draw.rect(self.screen, self.color, self.rect)

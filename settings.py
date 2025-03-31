@@ -8,6 +8,9 @@ class Settings():
         self.__bg_color = (0, 0, 0)
         
         self.bar_speed_factor = 1.5
+
+        # margin between the bars and the screen
+        self.bar_margin = 30
     @property
     def bg_color(self):
         return self.__bg_color
