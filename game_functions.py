@@ -36,3 +36,6 @@ def update_screen(settings, screen, user_bar, computer_bar, ball):
     ball.draw()
 
     pygame.display.flip()
+
+def check_ball_bar_collision(settings, screen, user_bar, computer_bar, ball):
+    ''' Check for interaction between the ball and the bars causing ball direction change '''

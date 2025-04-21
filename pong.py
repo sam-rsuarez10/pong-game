@@ -20,7 +20,7 @@ def run_game():
     # main loop
     while True:
         user_bar.update()
-        #game_ball.update()
+        game_ball.update()
         gf.check_events(user_bar)
         gf.update_screen(pong_settings, screen, user_bar, computer_bar, game_ball)
 
