@@ -34,8 +34,8 @@ class UserBar():
         ''' Update the user bar position based on the movement flag '''
 
         if self.moving_up and self.rect.top >  0:
-            self.y -= self.settings.bar_speed_factor
+            self.y -= self.settings.speed_factor
         elif self.moving_down and self.rect.bottom < self.screen_rect.bottom:
-            self.y += self.settings.bar_speed_factor
+            self.y += self.settings.speed_factor
         
         self.rect.centery = self.y

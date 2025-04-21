@@ -1,3 +1,10 @@
+from enum import Enum
+
+class BallDirection(Enum):
+        ''' Enum to define possible ball directions '''
+        RIGHT = 'right'
+        LEFT = 'left'
+
 class Settings():
     ''' Initialize game's settings '''
 
@@ -7,7 +14,9 @@ class Settings():
         self.__sceen_height = 750
         self.__bg_color = (0, 0, 0)
         
-        self.bar_speed_factor = 1.5
+        self.speed_factor = 1.5
+
+        self.ball_direction = BallDirection.LEFT
 
         # margin between the bars and the screen
         self.bar_margin = 30
